@@ -2,6 +2,8 @@ import { Router } from "express";
 import SearchController from "@controllers/search.controller";
 import { Routes } from "@interfaces/routes.interface";
 import authenticate from "@/middlewares/authenticate";
+import { validateRequest } from "@/middlewares/validateRequest.middleware";
+import { SaveSearchObject } from "@/dtos/search/saveSearch.dto";
 
 class SearchRoute implements Routes {
   public path = "/api/search";
@@ -22,6 +24,7 @@ class SearchRoute implements Routes {
     this.router.post(
       `${this.path}`,
       authenticate,
+      validateRequest({ body: SaveSearchObject }),
       this.searchController.saveSearch
     );
   }
