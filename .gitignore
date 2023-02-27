@@ -1,0 +1,16 @@
+node_modules
+.vscode
+.pnpm-store
+.cache/
+.eslintcache
+.pnpm-debug.log*
+logs
+*.log
+
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+db-data
