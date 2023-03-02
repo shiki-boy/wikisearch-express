@@ -17,6 +17,7 @@ specifiers:
   class-validator: ^0.14.0
   compression: ^1.7.4
   cors: ^2.8.5
+  date-fns: ^2.29.3
   dotenv: ^16.0.3
   envalid: ^7.3.1
   eslint: ^8.33.0
@@ -47,6 +48,7 @@ dependencies:
   class-validator: 0.14.0
   compression: 1.7.4
   cors: 2.8.5
+  date-fns: 2.29.3
   dotenv: 16.0.3
   envalid: 7.3.1
   express: 4.18.2
@@ -1743,6 +1745,11 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

@@ -2,6 +2,7 @@ import { PaginatedResponse } from "@/interfaces/routes.interface";
 import { SaveSearchDto } from "@/dtos/search/saveSearch.dto";
 import { Search, User } from "@/interfaces/models.interface";
 import searchModel from "@/models/Search";
+import { parseISO } from "date-fns";
 
 class SearchService {
   public async saveSearch(data: SaveSearchDto, user: User): Promise<Search> {
@@ -12,10 +13,15 @@ class SearchService {
     user: User,
     page: number,
     limit: number,
-    url: URL
+    url: URL,
+    filterByDate: string
   ): Promise<PaginatedResponse> {
+    const dateFilter = filterByDate
+      ? { createdAt: { $gte: parseISO(filterByDate) } }
+      : {};
+
     const results = await searchModel
-      .find({ user })
+      .find({ user, ...dateFilter })
       .skip((page - 1) * limit)
       .limit(limit);
 

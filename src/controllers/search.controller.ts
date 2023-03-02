@@ -18,12 +18,14 @@ class SearchController {
       const url = new URL(
         `${req.protocol}://${req.get("host")}${req.originalUrl}`
       );
+      const dateFilter = (req.query.date as string) ?? "";
 
       const data = await this.searchService.listSavedSearches(
         req.user,
         page,
         limit,
-        url
+        url,
+        dateFilter
       );
 
       res.status(200).json({ ...data });
