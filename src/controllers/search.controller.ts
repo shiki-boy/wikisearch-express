@@ -13,9 +13,20 @@ class SearchController {
     next: NextFunction
   ) => {
     try {
-      const data = await this.searchService.listSavedSearches(req.user);
+      const page = parseInt(req.query?.page as string) ?? 1;
+      const limit = parseInt(req.query?.limit as string) ?? 10;
+      const url = new URL(
+        `${req.protocol}://${req.get("host")}${req.originalUrl}`
+      );
 
-      res.status(200).json({ data });
+      const data = await this.searchService.listSavedSearches(
+        req.user,
+        page,
+        limit,
+        url
+      );
+
+      res.status(200).json({ ...data });
     } catch (error) {
       next(error);
     }
