@@ -70,6 +70,7 @@ class App {
     });
   }
 
+  // TODO: this is in testing
   private initializeSwagger() {
     const options = {
       swaggerDefinition: {
