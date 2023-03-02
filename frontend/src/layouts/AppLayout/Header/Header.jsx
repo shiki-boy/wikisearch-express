@@ -20,7 +20,7 @@ const Header = () => {
 
       <img
         className='profile-pic'
-        src={ userData.info.profile_pic }
+        src={ userData.info.profilePic }
         alt='profile-pic'
         onClick={ () => setShowMenu( ( old ) => !old ) }
       />

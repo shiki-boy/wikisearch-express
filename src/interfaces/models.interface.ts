@@ -14,6 +14,7 @@ export interface IUser extends BaseFields {
   email: string;
   password: string;
   isActive: boolean;
+  profilePic: string,
 }
 
 interface IUserMethods {

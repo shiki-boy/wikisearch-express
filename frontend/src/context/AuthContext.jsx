@@ -25,7 +25,7 @@ export const AuthContextProvider = ( { children } ) => {
 
   useEffect( () => {
     if ( isSuccess ) {
-      setUserData( { info: data } )
+      setUserData( { info: data.user } )
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ isSuccess, data ] )

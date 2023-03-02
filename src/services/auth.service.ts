@@ -71,6 +71,7 @@ class AuthService {
           firstName: payload["given_name"],
           lastName: payload["family_name"],
           password: "!" + unusablePassword,
+          profilePic: payload['picture']
         });
 
         return { user: newUser, token: user.generateAuthToken() };

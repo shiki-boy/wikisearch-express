@@ -30,6 +30,9 @@ const userSchema: Schema = new Schema<IUser, User>(
       type: Boolean,
       default: true,
     },
+    profilePic: {
+      type: String
+    },
   },
   { timestamps: true }
 );
