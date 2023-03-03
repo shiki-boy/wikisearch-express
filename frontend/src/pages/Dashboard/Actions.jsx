@@ -23,7 +23,7 @@ const Actions = ( { row } ) => {
       <Icon
         IconComponent={ DeleteIcon }
         className='danger md pointer'
-        onClick={ () => deleteSearch( row.uid ) }
+        onClick={ () => deleteSearch( row._id ) }
       />
     </div>
   )

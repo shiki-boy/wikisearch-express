@@ -9,6 +9,10 @@ class SearchService {
     return searchModel.create({ ...data, user });
   }
 
+  public async deleteSearch(id: string, user: User): Promise<Search> {
+    return searchModel.findOneAndDelete({ _id: id, user });
+  }
+
   public async listSavedSearches(
     user: User,
     page: number,

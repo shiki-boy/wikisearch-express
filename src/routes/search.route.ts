@@ -27,6 +27,12 @@ class SearchRoute implements Routes {
       validateRequest({ body: SaveSearchObject }),
       this.searchController.saveSearch
     );
+
+    this.router.delete(
+      `${this.path}/:id`,
+      authenticate,
+      this.searchController.deleteSearch
+    );
   }
 }
 

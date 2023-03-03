@@ -50,6 +50,24 @@ class SearchController {
       next(error);
     }
   };
+
+  public deleteSearch = async (
+    req: RequestWithUser,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      console.log(req.params)
+      if (!req.params.id) {
+        res.status(400).json({message: "No id provided"})
+      }
+      await this.searchService.deleteSearch(req.params.id, req.user)
+
+      res.status(204).json({ message: "Search deleted successfully" });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export default SearchController;
